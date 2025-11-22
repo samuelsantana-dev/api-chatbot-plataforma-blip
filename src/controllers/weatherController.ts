@@ -9,7 +9,7 @@ export async function weatherController(req: Request, res: Response) {
 
     return res.status(200).json({
       city: data.name,
-      temperature: Math.round(data.temperature),
+      temperature: data.temperature ? Math.round(data.temperature) : null,
       description: data.description,
       icon_url: `http://openweathermap.org/img/wn/${data.icon}.png`,
       country_flag: `https://countryflagsapi.com/png/${data.country}`,

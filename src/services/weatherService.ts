@@ -1,6 +1,7 @@
 import axios from "axios";
+import { WeatherData } from "../types";
 
-export async function getWeather(city: string) {
+export async function getWeather(city: string): Promise<WeatherData> {
     const apiKey = process.env.WEATHER_KEY;
 
     if (!apiKey) throw new Error("WEATHER_KEY não definida no .env");
